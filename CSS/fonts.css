@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Karla';
+    src: url('../FONTS/Karla-Regular.eot');
+    src: url('../FONTS/Karla-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../FONTS/Karla-Regular.woff2') format('woff2'),
+        url('../FONTS/Karla-Regular.woff') format('woff'),
+        url('../FONTS/Karla-Regular.ttf') format('truetype'),
+        url('../FONTS/Karla-Regular.svg#Karla-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,96 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0px;
+}
+a{
+    text-decoration: none;
+}
+/* navbar section start */
+.navBar{
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    padding: 40px 100px;
+    /* background-color: red; */
+}
+.navBarLogo{
+    width: 45%;
+}
+.menu{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+.menu a{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Karla';
+    font-weight: 500;
+    color: gray;
+    transition: 0.3s ;
+}
+.menu a:hover, .cartDiv:hover{
+    font-family: 'Karla';
+    color: black;
+    /* this makes text bolder without changing font size */
+    text-shadow: 0 0.015em #101010,0 -0.015em #101010,0.01em 0 #101010,-0.01em 0 #101010;
+}
+
+.cartDiv{
+    width: 10%;
+    display: flex;
+    margin-left: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.cartDiv a{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Karla';
+    font-weight: 500;
+    color: gray;
+    transition: 0.3s ;
+}
+/* navbar section end  */
+
+/* banner section start */
+.bannerSection{
+    background-image: url(../IMAGES/headerBgCoffeeImg.jpg);
+    width: 90%;
+    height: 80vh;
+    margin: 0px auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+.bannerLayer{
+    background-color: rgba(0, 0, 0, 0.496);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* banner section end  */
