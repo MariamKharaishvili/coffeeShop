@@ -315,10 +315,19 @@ a{
 
     /* magazine section */
 /* .magazineSection{
+
+    background-color: red;
     width: 100%;
 } */
+.premiumOffer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
 .magazineOffer{
-    width: 40%;
+    /* background-color: blue; */
+    width: 45%;
 }
 .magazineOffer h5{
     font-size: 20px;
@@ -349,18 +358,27 @@ a{
     background-color: rgb(3, 3, 91);
     color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+.magazineImages{
+    display: flex;
+    align-items: center;
+    width: 45%;
+    /* background-color: yellow; */
+}
+.magazineImagesSingleimg{
+    width: 68%;
+    margin-right: 4%;
+}
+.magazineImagesSingleimg img{
+    width: 100%;
+}
+.smallImagesBox{
+    width: 37%;
+}
+.topImg{
+    margin-bottom: 2%;
+}
+.topImg img, .bottomImg img{
+    width: 100%;
+}
 
     /* magazine section    */
