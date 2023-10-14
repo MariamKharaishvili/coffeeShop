@@ -14,6 +14,13 @@ a{
     margin: 0px auto;
     padding: 30px;
     width: 80%;
+    /* background-color: red; */
+}
+/* for cards, to make them cenetered and column */
+.flexColumn{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 /* navbar section start */
 .navBar{
@@ -118,7 +125,14 @@ a{
     text-transform: uppercase;
     color:#101010;
     background-color: #fff;
-    font-family: 'Karla';
+    font-family: 'Lora';
+    cursor: pointer;
+    transition: 0.5s;
+}
+.bannerTxtWrapper button:hover{
+    background-color: grey;
+    color: #fff;
+
 }
 /* banner section end  */
 
@@ -130,7 +144,7 @@ a{
     align-items: center;
     flex-direction: column;
     padding: 50px;
-    margin-top: 8%;
+    margin: 8% 0 5% 0;
 }
 .fullstorySection h2{
     width: 50%;
@@ -139,6 +153,7 @@ a{
     line-height: 60px;
     font-size: 45px;
     color: rgb(70, 70, 70);
+    font-family: 'Lora';
 }
 .fullstorySection p{
     width: 50%;
@@ -148,6 +163,7 @@ a{
     letter-spacing: 1.5px;
     font-size: 25px;
     color: gray;
+    font-family: 'Karla';
 }
 .fullstorySection a{
     font-size: 25px;
@@ -155,25 +171,196 @@ a{
     color: rgba(165, 42, 42, 0.741);
     border-bottom: 2px solid  rgba(165, 42, 42, 0.400);
     transition: 0.5s;
+    font-family: 'Lora';
 }
 .fullstorySection a:hover{
     color: brown;
     border-bottom: 2px solid  brown;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* fullstory section  */
+
+/* featured mugs section */
+
+.featuredSectionTitle h4{
+    font-size: 20px;
+    margin: 0 10px;
+    color: grey;
+    text-transform: uppercase;
+    font-family: 'Lora';
+}
+.featuredSectionTitle{
+    display: flex;
+    align-items: center;
+}
+.divider{
+    height: 2px;
+    background-color: rgba(167, 165, 165, 0.615);
+    width: 70px;
+    /* border: 2px solid grey; */
+}
+.mugsCards{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.cardsWrapper{
+    width: 45%;
+}
+.card{
+    background-image: url(../IMAGES/pinkbgflowercupimg.jpg);
+    width:100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 8%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+.card button{
+    width: 90%;
+    background-color: #fff;
+    color: #101010;
+    font-family: 'Karla';
+    border: none;
+    padding: 30px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 20px;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: -30px;
+    transition: 0.5s;
+}
+.card:hover button{
+    opacity: 1;
+    bottom: 0;
+    visibility: visible;
+    cursor: pointer;
+}
+.cardTxtWrapperTitle{
+    font-size: 23px;
+    color: darkslategray;
+    text-transform: capitalize;
+    font-family: 'Manrope';
+}
+.cardsWrapperPrice{
+    margin-top: 8%;
+    font-size: 18px;
+    color: gray;
+    text-transform: uppercase;
+    font-family: 'Manrope';
+}
+.mugsCards .cardsWrapper:nth-child(2) .card{
+    background-image: url(../IMAGES/goldenMugimg.jpg);
+}
+
+/* featured mugs section */
+/* more products section */
+.featuredSectionTitle{
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+}
+.allCard{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8%;
+    gap: 50px;
+}
+.allCard .cardsWrapper{
+    width: 25%;
+}
+.allCard .card{
+    height: 50vh;
+}
+.cardsWrapper{
+    margin-bottom: 5%;
+}
+.allCard .cardsWrapper:nth-child(1) .card{
+    background-image: url(../IMAGES/mug1.jpg);
+}
+.allCard .cardsWrapper:nth-child(2) .card{
+    background-image: url(../IMAGES/mug2.jpg);
+}
+.allCard .cardsWrapper:nth-child(3) .card{
+    background-image: url(../IMAGES/mug3.jpg);
+}
+.allCard .cardsWrapper:nth-child(4) .card{
+    background-image: url(../IMAGES/mug4.jpg);
+}
+.allCard .cardsWrapper:nth-child(5) .card{
+    background-image: url(../IMAGES/mug5.jpg);
+}
+.allCard .cardsWrapper:nth-child(6) .card{
+    background-image: url(../IMAGES/mug6.jpg);
+}
+.allCard .cardsWrapper:nth-child(7) .card{
+    background-image: url(../IMAGES/mug7.jpg);
+}
+.allCard .cardsWrapper:nth-child(8) .card{
+    background-image: url(../IMAGES/pinkbgflowercupimg.jpg);
+}
+.allCard .cardsWrapper:nth-child(9) .card{
+    background-image: url(../IMAGES/mug8.jpg);
+}
+/* more products section */
+
+    /* magazine section */
+/* .magazineSection{
+    width: 100%;
+} */
+.magazineOffer{
+    width: 40%;
+}
+.magazineOffer h5{
+    font-size: 20px;
+    font-family: "Karla";
+    color: gray;
+    text-transform: uppercase;
+}
+.magazineOffer h3{
+    font-size: 46px;
+    font-family: "Karla";
+    color: black;
+    text-transform: capitalize;
+    margin: 3% 0 3% 0;
+}
+.magazineOffer p{
+    font-size: 25px;
+    line-height: 1cm;
+    font-family: "Karla";
+    color: rgb(154, 149, 149);
+    margin-bottom: 15%;
+}
+.magazineOffer a{
+    font-size: 16px;
+    padding: 25px 30px;
+    text-transform: uppercase;
+    font-family: 'Manrope';
+    letter-spacing: 3px;
+    background-color: rgb(3, 3, 91);
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* magazine section    */
