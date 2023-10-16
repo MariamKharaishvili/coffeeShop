@@ -144,7 +144,7 @@ a{
     align-items: center;
     flex-direction: column;
     padding: 50px;
-    margin: 8% 0 5% 0;
+    margin-top: 8%;
 }
 .fullstorySection h2{
     width: 50%;
@@ -157,7 +157,8 @@ a{
 }
 .fullstorySection p{
     width: 50%;
-    margin-bottom: 3%;
+    /* margin-bottom: 3%; */
+    margin: 2% 0;
     text-align: center;
     line-height: 40px;
     letter-spacing: 1.5px;
@@ -184,7 +185,8 @@ a{
 .featuredSectionTitle h4{
     font-size: 20px;
     margin: 0 10px;
-    color: grey;
+    color: #2f3247;
+    opacity: 0.6;
     text-transform: uppercase;
     font-family: 'Lora';
 }
@@ -194,7 +196,8 @@ a{
 }
 .divider{
     height: 2px;
-    background-color: rgba(167, 165, 165, 0.615);
+    background-color: #2f3247;
+    opacity: 0.6;
     width: 70px;
     /* border: 2px solid grey; */
 }
@@ -264,7 +267,7 @@ a{
 /* featured mugs section */
 /* more products section */
 .featuredSectionTitle{
-    margin: 5%;
+    margin: 8%;
     display: flex;
     justify-content: center;
 }
@@ -355,7 +358,7 @@ a{
     text-transform: uppercase;
     font-family: 'Manrope';
     letter-spacing: 3px;
-    background-color: rgb(3, 3, 91);
+    background-color:#2f3247;
     color: #fff;
 }
 .magazineImages{
@@ -374,11 +377,150 @@ a{
 .smallImagesBox{
     width: 37%;
 }
+/* zemota fotoze avotmaturad igebs qvemot pixelebs da ratom ver mivxvdi */
 .topImg{
-    margin-bottom: 2%;
+    margin-bottom: 6%;
 }
 .topImg img, .bottomImg img{
     width: 100%;
 }
-
     /* magazine section    */
+
+    /* bg image fixed section */
+.fixedSectionImg{
+    background-image: url(../IMAGES/bgIMG\ SECTION.jpg);
+    width: 100%;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 10%;
+}
+    /* bg image fixed section */
+
+    /* lifestyle stories section */
+.lifestyleSection{
+    margin-bottom: 25%;
+}
+.lifestyleCardswrapper .cardBox:nth-child(1) .card{
+    background-image: url(../IMAGES/lifestyleImg1.jpg);
+    width: 100%;
+    height: 50vh;
+}
+.lifestyleCardswrapper .cardBox:nth-child(2) .card{
+    background-image: url(../IMAGES/lifestyleImg2.jpg);
+    width: 100%;
+    height: 50vh;
+
+}
+.lifestyleCardswrapper .cardBox:nth-child(3) .card{
+    background-image: url(../IMAGES/lifestyleImg3.jpg);
+    width: 100%;
+    height: 50vh;
+}
+.lifestyleCardswrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.cardBox {
+    width: 30%;
+}
+.cardTxtWrapper{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.lifeStyleBoxTitle{
+    position: absolute;
+    font-family: 'Manrope';
+    font-size: 25px;
+    line-height: 38px;
+    color:#1d1f2e ;
+}
+.lifeStyleBoxP{
+    position: absolute;
+    font-family: 'Lora';
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 30px;
+    top: 130px;
+    color: rgba(29, 31, 46, 0.7);
+}
+.lifeStyleBoxDate{
+    position: absolute;
+    font-family: 'Karla';
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 20px;
+    color:gray;
+    top: 250px;
+}
+    /* lifestyle stories section */
+    
+    /* <!-- sign up section --> */
+.logInSection{
+    width: 90%;
+    margin: 0 auto;
+    padding: 3%;
+    background-color:#1d1f2e;;
+}
+.logInTitle{
+    margin: unset;
+}
+.logInTitle h4{
+    color: #fff;
+}
+.logInTitle .divider{
+    background-color: #fff;
+}
+.logInSection h3{
+    margin: 5% 0%;
+    font-family: 'Manrope';
+    font-size: 50px;
+    color: #fff;
+    text-transform: capitalize;
+}
+#email{
+    width: 25%;
+    padding: 20px;
+    border: 1px solid #ffffff64 ;
+    background-color: transparent;
+}
+#email::placeholder{
+    font-family: 'Lora';
+    letter-spacing: 2px;
+    font-size: 15px;
+    color:#ffffffa5;
+}
+.formDivTxtWrapper{
+    width: 100%;
+}
+.emailDiv form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* <!-- sign up section  --> */
