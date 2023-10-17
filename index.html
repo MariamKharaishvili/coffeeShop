@@ -1,399 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Mariam Kharaishvili"> 
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="stylesheet" href="CSS/fonts.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAArxJREFUSEu1lU1IVFEUx//nvnTundHKNlkEgaASEkm1yIqYsSkyMjdWq3IhBEbQxoKodRRuC4qCxKIPilZlSDHvtcqCoEKoNCQoWklOOjP3zTDvnRjDybH34ca7vOee8/vfez4uYZkXLXN8LBkQB2ogZRcRdYGoBcAGMK8EkAHRQya6amWz7xcLDgW0AUpK2Q+iswBqg27MwGVL6/MLzwQC2pXaycBjAOsCAo8zMEzAa7juBzOfHwfA8+d9AQkpT4DoFoAqn+CWwdz70rYnS/a9sdhadpxmV4gmCDFqZTJjpX1PQFypYwQ88FVNdJtzuZNGJNLgCtELoBtAwwLVd1NaH/cExKXcTUQmgBU+gJSpdTKu1CUCSnkxPBI7kdK66T/ALqC2WqnSG9b7BM87zJsEsIeIBgPykjG1niuIiieKKzVAQL+fIwFPU1p3JpT6Plem/mva1HpNBSBZV7fKse0fKNW732K+IKqqbrjF4lRIg340td5SAUhEo6fAfC3QkTkphJhxmd8G9gPzdcu2+xYDXoA5GeQohKh3HGcfEd0JFCLEATObHakEKDUNYHWAY97UWiaUugLgXMC5b6x1owUUy4AjQPWUUvlAVURDZi7XE5dymIg6AgrhaErrRxWdvASAazA3Flw3YhhGaaBV+wCemVofWmgrl2lCqZ+eM4f5NwPdcdtOvVLqDYDtPsEnORLZZqXTaW9ANDoI5p7y1Yg+lQadw3xTav2roNR9Ajp9gqfZcdqsQuGzR1f/3UrU1LRwsbgDwBdIOTavJB6LtQrXHWJgs1dwAiZc1z1o5fNffez/tvcDsYJSHQSsB9AM4HBIx96TWvc9B2YCkl5palfqNAMDAKSPE4N5BEJcNHO5dyEd7T2u26XcyERnAGwFcyuISokbBVGKDeOJNTsbNirK3NAvM0xhmH3ZAX8A0Gn+GaWmEqkAAAAASUVORK5CYII=">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Mariam Kharaishvili" />
+    <link rel="stylesheet" href="CSS/reset.css" />
+    <link rel="stylesheet" href="CSS/fonts.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAArxJREFUSEu1lU1IVFEUx//nvnTundHKNlkEgaASEkm1yIqYsSkyMjdWq3IhBEbQxoKodRRuC4qCxKIPilZlSDHvtcqCoEKoNCQoWklOOjP3zTDvnRjDybH34ca7vOee8/vfez4uYZkXLXN8LBkQB2ogZRcRdYGoBcAGMK8EkAHRQya6amWz7xcLDgW0AUpK2Q+iswBqg27MwGVL6/MLzwQC2pXaycBjAOsCAo8zMEzAa7juBzOfHwfA8+d9AQkpT4DoFoAqn+CWwdz70rYnS/a9sdhadpxmV4gmCDFqZTJjpX1PQFypYwQ88FVNdJtzuZNGJNLgCtELoBtAwwLVd1NaH/cExKXcTUQmgBU+gJSpdTKu1CUCSnkxPBI7kdK66T/ALqC2WqnSG9b7BM87zJsEsIeIBgPykjG1niuIiieKKzVAQL+fIwFPU1p3JpT6Plem/mva1HpNBSBZV7fKse0fKNW732K+IKqqbrjF4lRIg340td5SAUhEo6fAfC3QkTkphJhxmd8G9gPzdcu2+xYDXoA5GeQohKh3HGcfEd0JFCLEATObHakEKDUNYHWAY97UWiaUugLgXMC5b6x1owUUy4AjQPWUUvlAVURDZi7XE5dymIg6AgrhaErrRxWdvASAazA3Flw3YhhGaaBV+wCemVofWmgrl2lCqZ+eM4f5NwPdcdtOvVLqDYDtPsEnORLZZqXTaW9ANDoI5p7y1Yg+lQadw3xTav2roNR9Ajp9gqfZcdqsQuGzR1f/3UrU1LRwsbgDwBdIOTavJB6LtQrXHWJgs1dwAiZc1z1o5fNffez/tvcDsYJSHQSsB9AM4HBIx96TWvc9B2YCkl5palfqNAMDAKSPE4N5BEJcNHO5dyEd7T2u26XcyERnAGwFcyuISokbBVGKDeOJNTsbNirK3NAvM0xhmH3ZAX8A0Gn+GaWmEqkAAAAASUVORK5CYII="
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Coffee Shop</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="navBar">
-            <div class="navBarLogo"> 
-                <a href="#">
-                    <img src="IMAGES/coffeelogo.png" alt="coffee logo">
-                </a>              
-            </div>
-            <div class="menu">
-                <div>
-                    <a href="#">home</a>
-                </div>
-                <div>
-                    <a href="#">our products</a>
-                </div>
-                <div>
-                    <a href="#">blogs</a>
-                </div>
-                <div>
-                    <a href="#">about</a>
-                </div>
-                <div>
-                    <a href="#">contact</a>
-                </div>
-                <div>
-                    <a href="#">styleguide</a>
-                </div>
-            </div>
-            <div class="cartDiv">
-                <a href="#">cart</a>
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAPFJREFUSEvt1T9KA0EUx/FPUuQEWqQVG01rK5gDxEZvYSrbBBQULC0ETxECgn0SL2ClYJXORs+QhIVdlQ3jLBOiTQamevN+3/ePNzVrPrU166sK6KCPPTQwwR0eYwFWAVzgMiB0hvvfIDHAIZ5ygasfYl30MMMBnkOQGOABxzjHbUkkA1xjiJNUwAe2sI3PkkgT75hiJxUwzx1DmWb27NarAkY4ik1GxD5Gu3hTjqyIeEXG9/jHAIU9BA7Zv3T/HZBaqsoZbABL2/TPx3TTg6UevGA/tS653ytaoV10ihvsJkLe8q91EAIk6obdYj/aysAF+WErGaU7HbMAAAAASUVORK5CYII="/>
-            </div>
-        </nav>     
+      <nav class="navBar">
+        <div class="navBarLogo">
+          <a href="#">
+            <img src="IMAGES/coffeelogo.png" alt="coffee logo" />
+          </a>
+        </div>
+        <div class="menu">
+          <div>
+            <a href="#" id="active">home</a>
+          </div>
+          <div>
+            <a href="#">our products</a>
+          </div>
+          <div>
+            <a href="#">blogs</a>
+          </div>
+          <div>
+            <a href="#">about</a>
+          </div>
+          <div>
+            <a href="#">contact</a>
+          </div>
+          <div>
+            <a href="#">styleguide</a>
+          </div>
+        </div>
+        <div class="cartDiv">
+          <a href="#">cart</a>
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAPFJREFUSEvt1T9KA0EUx/FPUuQEWqQVG01rK5gDxEZvYSrbBBQULC0ETxECgn0SL2ClYJXORs+QhIVdlQ3jLBOiTQamevN+3/ePNzVrPrU166sK6KCPPTQwwR0eYwFWAVzgMiB0hvvfIDHAIZ5ygasfYl30MMMBnkOQGOABxzjHbUkkA1xjiJNUwAe2sI3PkkgT75hiJxUwzx1DmWb27NarAkY4ik1GxD5Gu3hTjqyIeEXG9/jHAIU9BA7Zv3T/HZBaqsoZbABL2/TPx3TTg6UevGA/tS653ytaoV10ihvsJkLe8q91EAIk6obdYj/aysAF+WErGaU7HbMAAAAASUVORK5CYII="
+            alt="cart icon"
+          />
+        </div>
+      </nav>
     </header>
     <!-- banner section  -->
     <section class="bannerSection">
-        <div class="bannerLayer">
-            <div class="bannerTxtWrapper">
-                <span>best place to buy design </span>
-                <h1> coffee mugs</h1>
-                <p> The most versatile furniture system ever created. Designed to fit your life, made to move and grow.</p>
-                <button>
-                    explore our products
-                </button>
-            </div>
+      <div class="bannerLayer">
+        <div class="bannerTxtWrapper">
+          <span>best place to buy design </span>
+          <h1>coffee mugs</h1>
+          <p>
+            The most versatile furniture system ever created. Designed to fit
+            your life, made to move and grow.
+          </p>
+          <button>explore our products</button>
         </div>
+      </div>
     </section>
     <!-- banner section  -->
 
     <!-- fullstory section  -->
     <section class="fullstorySection container">
-        <h2>
-            Even the all-powerful Pointing has no control about the blind texts.
-        </h2>
-        <p> 
-            It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
-        </p>
-        <a href="#">Read the full Story</a>
-
+      <h2>
+        Even the all-powerful Pointing has no control about the blind texts.
+      </h2>
+      <p>
+        It is a paradisematic country, in which roasted parts of sentences fly
+        into your mouth. Even the all-powerful Pointing has no control about the
+        blind texts it is an almost unorthographic life One day however a small
+        line of blind text by the name of Lorem Ipsum decided to leave for the
+        far World of Grammar.
+      </p>
+      <a href="#">Read the full Story</a>
     </section>
     <!-- fullstory section  -->
 
     <!-- featured mugs section -->
-    <section class="container flexColumn" data-aos="fade-up" data-aos-duration="1000">
-        <div class="featuredSectionTitle">
-            <div class="divider"></div>
-            <h4> featured mugs</h4>
-            <div class="divider"></div>
+    <section
+      class="container flexColumn"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div class="featuredSectionTitle">
+        <div class="divider"></div>
+        <h4>featured mugs</h4>
+        <div class="divider"></div>
+      </div>
+      <div class="mugsCards">
+        <div class="cardsWrapper">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $99.00 usd </span>
+          </div>
         </div>
-        <div class="mugsCards" > 
-            <div class="cardsWrapper">
-                <div class="card" >
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $99.00 usd
-                        </span>
-                </div>
-            </div>
-            <div class="cardsWrapper">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $99.00 usd
-                        </span>
-                </div>
-            </div>
+        <div class="cardsWrapper">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $99.00 usd </span>
+          </div>
         </div>
+      </div>
     </section>
     <!-- featured mugs section -->
 
     <!-- more products section -->
-    <section class="moreProducts container" data-aos="fade-up" data-aos-duration="1000">
-        <div class="featuredSectionTitle">
-            <div class="divider"></div>
-            <h4> more products</h4>
-            <div class="divider"></div>
+    <section
+      class="moreProducts container"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div class="featuredSectionTitle">
+        <div class="divider"></div>
+        <h4>more products</h4>
+        <div class="divider"></div>
+      </div>
+      <div class="allCard">
+        <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $25.00 usd </span>
+          </div>
         </div>
-        <div class="allCard">
-            <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $25.00 usd
-                        </span>
-                </div>
-            </div>
-            <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $15.00 usd
-                        </span>
-                </div>
-            </div>
-            <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $19.00 usd
-                        </span>
-                </div>
-            </div>
-            <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $25.00 usd
-                        </span>
-                </div>
-            </div>
-            <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $46.00 usd
-                        </span>
-                </div>
-            </div>
-            <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $34.00 usd
-                        </span>
-                </div>
-            </div>
-            <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $25.00 usd
-                        </span>
-                </div>
-            </div>
-            <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $99.00 usd
-                        </span>
-                </div>
-            </div>
-            <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card">
-                    <button>
-                        explore mug
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper flexColumn">
-                        <span class="cardTxtWrapperTitle">
-                            pink premium ceramic
-                        </span>
-                        <span class="cardsWrapperPrice">
-                            $29.00 usd
-                        </span>
-                </div>
-            </div>
-
+        <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $15.00 usd </span>
+          </div>
         </div>
-
+        <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $19.00 usd </span>
+          </div>
+        </div>
+        <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $25.00 usd </span>
+          </div>
+        </div>
+        <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $46.00 usd </span>
+          </div>
+        </div>
+        <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $34.00 usd </span>
+          </div>
+        </div>
+        <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $25.00 usd </span>
+          </div>
+        </div>
+        <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $99.00 usd </span>
+          </div>
+        </div>
+        <div class="cardsWrapper" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card">
+            <button>explore mug</button>
+          </div>
+          <div class="cardTxtWrapper flexColumn">
+            <span class="cardTxtWrapperTitle"> pink premium ceramic </span>
+            <span class="cardsWrapperPrice"> $29.00 usd </span>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- more products section -->
-    
+
     <!-- magazine section -->
-    <section class="magazineSection container" data-aos="fade-up" data-aos-duration="1000">
-        <div class="featuredSectionTitle">
-            <div class="divider"></div>
-            <h4> BUY 2 MUGS AND GET A COFFEE MAGAZINE FREE</h4>
-            <div class="divider"></div>
+    <section
+      class="magazineSection container"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div class="featuredSectionTitle">
+        <div class="divider"></div>
+        <h4>BUY 2 MUGS AND GET A COFFEE MAGAZINE FREE</h4>
+        <div class="divider"></div>
+      </div>
+      <div class="premiumOffer">
+        <div class="magazineOffer">
+          <h5>premium offer</h5>
+          <h3>get our coffee magazine</h3>
+          <p>
+            The most versatile furniture system ever created. Designed to fit
+            your life.
+          </p>
+          <a href="#"> start shopping</a>
         </div>
-        <div class="premiumOffer ">
-            <div class="magazineOffer">
-                <h5>premium offer</h5>
-                <h3> get our coffee magazine</h3>
-                <p>The most versatile furniture system ever created. Designed to fit your life.</p>
-                <a href="#"> start shopping</a>
+        <div class="magazineImages">
+          <div class="magazineImagesSingleimg">
+            <img src="IMAGES/magazine1.jpg" alt="magazine img" />
+          </div>
+          <div class="smallImagesBox">
+            <div class="topImg">
+              <img src="IMAGES/magazine2.jpg" alt="mug img" />
             </div>
-            <div class="magazineImages">
-                <div class="magazineImagesSingleimg">
-                    <img src="IMAGES/magazine1.jpg" alt="magazine img">
-                </div>
-                <div class="smallImagesBox">
-                    <div class="topImg">
-                        <img src="IMAGES/magazine2.jpg" alt="mug img">
-                    </div>
-                    <div class="bottomImg">
-                        <img src="IMAGES/magazine3.jpg" alt="mug img">
-                    </div>
-                </div>
+            <div class="bottomImg">
+              <img src="IMAGES/magazine3.jpg" alt="mug img" />
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- magazine section     -->
 
     <!-- bg image fixed section -->
-    <div class="fixedSectionImg"> </div>
+    <div class="fixedSectionImg"></div>
     <!-- bg image fixed section -->
-    
+
     <!-- lifestyle stories section -->
-    <section class="lifestyleSection container" data-aos="fade-up" data-aos-duration="1000">
-        <div class="featuredSectionTitle">
-            <div class="divider"></div>
-            <h4>BEHIND THE MUGS, LIFESTYLE STORIES</h4>
-            <div class="divider"></div>
+    <section
+      class="lifestyleSection container"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div class="featuredSectionTitle">
+        <div class="divider"></div>
+        <h4>BEHIND THE MUGS, LIFESTYLE STORIES</h4>
+        <div class="divider"></div>
+      </div>
+      <div class="lifestyleCardswrapper">
+        <div class="cardBox">
+          <div class="card">
+            <button>read the full story</button>
+          </div>
+          <div class="cardTxtWrapper">
+            <span class="lifeStyleBoxTitle">
+              Health Check: why do I get a headache when I haven’t had my
+              coffee?
+            </span>
+            <p class="lifeStyleBoxP">
+              It is a paradisematic country, in which roasted parts of sentences
+              fly into your mouth.
+            </p>
+            <span class="lifeStyleBoxDate"> october 9, 2018 </span>
+          </div>
         </div>
-        <div class="lifestyleCardswrapper">
-            <div class="cardBox">
-                <div class="card">
-                    <button>
-                        read the full story
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper">
-                        <span class="lifeStyleBoxTitle">
-                            Health Check: why do I get a headache when I haven’t had my coffee?
-                        </span>
-                        <p class="lifeStyleBoxP">
-                            It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                        </p>
-                        <span class="lifeStyleBoxDate">
-                            october 9, 2018 
-                        </span>
-                </div>
-            </div>
-            <div class="cardBox">
-                <div class="card">
-                    <button>
-                        read the full story
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper ">
-                        <span class="lifeStyleBoxTitle">
-                            How long does a cup of coffee keep you awake?
-                        </span>
-                        <p class="lifeStyleBoxP">
-                             It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.
-                        </p>
-                        <span class="lifeStyleBoxDate">
-                            october 9, 2018 
-                        </span>
-                </div>
-            </div>
-            <div class="cardBox">
-                <div class="card">
-                    <button>
-                        read the full story
-                    </button>
-                    </div>
-                    <div class="cardTxtWrapper">
-                        <span class="lifeStyleBoxTitle">
-                            Recent research suggests that heavy coffee drinkers may reap health benefits.
-                        </span>
-                        <p class="lifeStyleBoxP">
-                            It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                        </p>
-                        <span class="lifeStyleBoxDate">
-                            october 9, 2018 
-                        </span>
-                </div>
-            </div>
+        <div class="cardBox">
+          <div class="card">
+            <button>read the full story</button>
+          </div>
+          <div class="cardTxtWrapper">
+            <span class="lifeStyleBoxTitle">
+              How long does a cup of coffee keep you awake?
+            </span>
+            <p class="lifeStyleBoxP">
+              It is a paradisematic country, in which roasted parts. Vel qui et
+              ad voluptatem.
+            </p>
+            <span class="lifeStyleBoxDate"> october 9, 2018 </span>
+          </div>
         </div>
+        <div class="cardBox">
+          <div class="card">
+            <button>read the full story</button>
+          </div>
+          <div class="cardTxtWrapper">
+            <span class="lifeStyleBoxTitle">
+              Recent research suggests that heavy coffee drinkers may reap
+              health benefits.
+            </span>
+            <p class="lifeStyleBoxP">
+              It is a paradisematic country, in which roasted parts of sentences
+              fly into your mouth.
+            </p>
+            <span class="lifeStyleBoxDate"> october 9, 2018 </span>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- lifestyle stories section -->
 
     <!-- sign up section -->
     <section class="logInSection">
-        <div class="featuredSectionTitle logInTitle">
-            <div class="divider"></div>
-            <h4> sign up and get free coffee bags</h4>
-            <div class="divider"></div>
+      <div class="featuredSectionTitle logInTitle">
+        <div class="divider"></div>
+        <h4>sign up and get free coffee bags</h4>
+        <div class="divider"></div>
+      </div>
+      <div class="formDivWrapper flexColumn">
+        <h3>coffee updates</h3>
+        <div class="formDivTxtWrapper">
+          <div class="emailDiv">
+            <form action="#">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="COSTUMER@COFEESTYLE.IO"
+              />
+              <!-- <input type="submit" class="signInSubmit"> -->
+              <button class="signInButton">subscribe</button>
+            </form>
+          </div>
         </div>
-        <div class="formDivWrapper flexColumn">
-            <h3> coffee  updates</h3>
-            <div class="formDivTxtWrapper">
-                <div class="emailDiv">
-                    <form action="#">
-                        <input type="email" name="email" id="email" placeholder="COSTUMER@COFEESTYLE.IO">
-                        <!-- <input type="submit" class="signInSubmit"> -->
-                        <button class="signInButton"> subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        
-
+      </div>
+    </section>
     <!-- sign up section  -->
 
+    <!-- footer section  -->
+    <footer>
+      <div class="footerInfo">
+        <div class="footerLogo">
+          <img src="IMAGES/coffeelogo.png" alt="coffee logo" />
+        </div>
+        <p class="footerP">
+          Delivering the best coffee life since 1996. From coffee geeks to the
+          real ones.
+        </p>
+        <p class="copyright">CoffeeStyle Inc. &copy; 1996</p>
+      </div>
+      <div class="footerTxtWrapper">
+        <div class="menuDiv">
+          <h6><a href="#">menu</a></h6>
+          <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">our products</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">contact</a></li>
+            <li><a href="#">styleguide</a></li>
+          </ul>
+        </div>
+        <div class="followsUsDiv">
+          <h6><a href="#">follow us</a></h6>
+          <ul>
+            <li><a href="#">facebook</a></li>
+            <li><a href="#">instagram</a></li>
+            <li><a href="#">pinterest</a></li>
+            <li><a href="#">twitter</a></li>
+          </ul>
+        </div>
+        <div class="contactUsdiv">
+          <h6><a href="#">contact us</a></h6>
+          <a href="#">we're always happy to help</a>
+          <a href="mailto:mariam@kharaishvili@gmail.com"> us@coffeestyle.io</a>
+        </div>
+      </div>
+    </footer>
 
-
+    <!-- footer section  -->
 
     <script>
-        AOS.init();
-      </script>
-</body>
-</html>                                                                                                                                                                
+      AOS.init();
+    </script>
+  </body>
+</html>
