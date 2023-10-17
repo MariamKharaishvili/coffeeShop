@@ -488,6 +488,7 @@ a{
     width: 25%;
     padding: 20px;
     border: 1px solid #ffffff64 ;
+    color: #fff;
     background-color: transparent;
 }
 #email::placeholder{
@@ -505,8 +506,24 @@ a{
     justify-content: center;
     align-items: center;
 }
-
-
+.signInButton{
+    font-size: 15px;
+    margin-left: 20px;
+    padding:18.5px 30px;
+    border: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #101010;
+    background-color: #fff;
+    font-family: 'Lora';
+    cursor: pointer;
+    transition: 0.5s;
+}
+.signInButton:hover{
+    color:#fff;
+    background-color: #3a39397a;
+}
 
 
 
